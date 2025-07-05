@@ -22,8 +22,9 @@ const MatchForm = ({ onResults }) => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post('https://neighborfit-backend.onrender.com/api/match', prefs);
-      
+      const res = await axios.post('https://neighborfit-api.onrender.com/api/match', prefs);
+
+
       onResults(res.data.results);
     } catch (err) {
       setError('Failed to fetch match results.');
